@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ball - Shooter</title>
+    <!-- using gsap for smooth animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      canvas {
+        background-color: black;
+      }
+      .scoreBoard {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        color: white;
+        font-size: 4vh;
+        display: flex;
+        gap: 10px;
+      }
+      .scoreBoard select {
+        outline: none;
+        background-color: crimson;
+        color: white;
+        border: none;
+      }
+      option {
+        border: none;
+      }
+      .result {
+        background-color: white;
+        position: absolute;
+        top: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 0rem;
+        font-size: 4vh;
+        font-weight: bold;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        width: 100vw;
+      }
+      .result p,
+      .result h1 {
+        margin: 0;
+      }
+      .result button {
+        color: white;
+        border: none;
+        width: 40%;
+        background-color: crimson;
+        padding: 0.9rem;
+        border-radius: 20px;
+        transition: all 200ms ease;
+        cursor: pointer;
+      }
+      .result button:active {
+        transform: scale(0.9);
+      }
+      .prevent-select {
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="result">
+      <h1 class="score">0</h1>
+      <p>points</p>
+      <button>Start Game</button>
+    </div>
+    <div class="scoreBoard">
+      <span>Score:</span><span class="score"> 0 </span>
+      <select name="levels" id="levels">
+        <option value="5">Easy</option>
+        <option value="10">Medium</option>
+        <option value="18">Hard</option>
+      </select>
+    </div>
+    <canvas></canvas>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
